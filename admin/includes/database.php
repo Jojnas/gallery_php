@@ -1,15 +1,10 @@
 <?php
 
-require_once("new_config.php");
 
 class Database {
 
     public $connection;
 
-    /**
-     * Database constructor.
-     * @param $connection
-     */
     function __construct()
     {
         $this->open_database();
@@ -22,6 +17,24 @@ class Database {
             die("hmm" . mysqli_error());
         }
     }
+
+    public function query($sql){
+        $result = mysqli_query($this->connection, $sql);
+
+        return $result;
+    }
+
+    private function confirm_query($result){
+        if(! $result){
+            die('db query failed');
+        }
+    }
+
+    public function escape_string($string){
+        $escaped_string = mysqli_real_escape_string($this->connection, $string);
+        return $escaped_string;
+    }
+
 
 }
 
