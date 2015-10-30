@@ -27,7 +27,7 @@ if($user_found){
 
 
 } else {
-
+    $the_message = null;
     $username = null;
     $password = null;
 
