@@ -12,4 +12,9 @@ function __autoload($class){
     } else {
         die("This file name {$class}.php was not found");
     }
+
+
+    function redirect($location){
+        header("Location: {$location}");
+    }
 }

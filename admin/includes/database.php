@@ -21,6 +21,8 @@ class Database {
     public function query($sql){
         $result = mysqli_query($this->connection, $sql);
 
+        $this->confirm_query($result);
+
         return $result;
     }
 
