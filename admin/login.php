@@ -2,6 +2,8 @@
 
 require_once('includes/header.php');
 
+
+
 if($session->isSignedIn()){
     redirect('index.php');
 }

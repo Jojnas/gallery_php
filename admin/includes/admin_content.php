@@ -14,11 +14,42 @@
 
 
 
+           /* $user = new User();
+            $user->username = "Fekete";
+            $user->password = "aaaaaa";
+            $user->first_name = "Feketas";
+            $user->last_name = "George";
 
+            $user->create();*/
 
-            $found_user = User::find_user_by_id(1);
+//            $user = User::find_by_id(4);
+////
+//            $user->last_name = "Lulu";
+//            $user->update();
+//            $user->delete();
 
-            echo $found_user->last_name;
+//            $user = new User();
+
+//            $user->username = "jano";
+//            $user->password = "hocicoaaa";
+//            $user->first_name = "moriakwww";
+//            $user->last_name = "sensessssj";
+//            $user->create();
+
+//            $photo = Photo::find_all();
+//
+//            foreach($photo as $phot){
+//                echo $phot->title;
+//            }
+
+//            $photo = new Photo();
+//            $photo->title = "Fekete";
+//            $photo->description = "aaaaaa";
+//            $photo->filename = "Feketas";
+//            $photo->size = "20";
+//
+//            $photo->create()
+
 
             ?>
             <ol class="breadcrumb">
