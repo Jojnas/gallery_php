@@ -22,8 +22,8 @@
 
             $user->create();*/
 
-//            $user = User::find_by_id(4);
-////
+//            $photo = Photo::find_by_id(15);
+//               echo $photo->filename;
 //            $user->last_name = "Lulu";
 //            $user->update();
 //            $user->delete();
