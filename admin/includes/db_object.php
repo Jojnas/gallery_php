@@ -135,6 +135,12 @@ class DB_object{
 
     }
 
+    public function picture_path(){
+
+        return $this->upload_directory . '/' . $this->filename;
+
+    }
+
     public function update(){
 
         global $database;
