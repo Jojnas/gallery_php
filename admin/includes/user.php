@@ -23,33 +23,15 @@ class User extends DB_object {
            return $this->upload_directory . DS . $this->image;
         }
     }
+    public function picture_pathu(){
 
-    public function set_file($file) {
-
-        if(empty($file) || !$file || !is_array($file)){
-            $this->errors[] = "There was no file uploaded here";
-            return false;
-
-        } elseif($file['error'] != 0) {
-            $this->errors[] = $this->upload_errors_array[$file['error']];
-            return false;
-
-        } else {
-            $this->image = basename($file['name']);
-            $this->tmp_path = $file['tmp_name'];
-            $this->type = $file['type'];
-            $this->size = $file['size'];
-
-        }
+        return $this->upload_directory . '/' . $this->image;
 
     }
 
-    public function save_user_and_image(){
 
-        if($this->id){
+    public function upload_photo(){
 
-            $this->update();
-        } else {
 
             if(!empty($this->errors)){
 
@@ -70,11 +52,11 @@ class User extends DB_object {
 
             if(move_uploaded_file($this->tmp_path, $target_path)){
 
-                if($this->create()){
+
 
                     unset($this->tmp_path);
                     return true;
-                }
+
             } else {
 
                 $this->errors[] = "the file directory does not have permission";
@@ -82,7 +64,7 @@ class User extends DB_object {
             }
 
             $this->create();
-        }
+
     }
 
 
