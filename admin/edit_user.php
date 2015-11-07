@@ -58,14 +58,13 @@ if (isset($_POST['update'])) {
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        users
-                        <small>Subheading</small>
+                        Users
                     </h1>
                     <div class="col-md-6">
                         <img class="img-responsive" src="<?php echo $user->picture_pathu(); ?>" alt="">
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <input type="file" name="image">
                             </div>
