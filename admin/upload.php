@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $photo->title = $_POST['title'];
     $photo->set_file($_FILES['file_upload']);
 
-    if($photo->save()){
+     if($photo->save()){
 
         $message = "Photo has been uploaded";
     } else {

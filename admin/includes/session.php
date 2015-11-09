@@ -3,8 +3,10 @@
 class Session {
 
     private $signed_in = false;
-    public  $user_id;
+    public $count;
+    public $user_id;
     public $message;
+
 
 
     /**
@@ -14,6 +16,7 @@ class Session {
     {
         session_start();
         $this->check_the_login();
+        $this->visitor_count();
         $this->check_message();
     }
 
@@ -53,6 +56,17 @@ class Session {
             $this->user_id = $_SESSION['user_id'] = $user->id;
             $this->signed_in = true;
         }
+    }
+
+    public function visitor_count(){
+
+        if(isset($_SESSION['count'])){
+            $this->count = $_SESSION['count']++;
+            return $this->count;
+        }else{
+            return $_SESSION['count'] = 1;
+        }
+
     }
 
     public function logout(){

@@ -17,6 +17,7 @@ class Photo extends DB_object{
     public $upload_directory = "images";
 
 
+
     public function save(){
 
         if($this->id){

@@ -40,6 +40,7 @@ $photos = Photo::find_all();
                                     <th>Filename</th>
                                     <th>Title</th>
                                     <th>Size</th>
+                                    <th>Comments</th>
                                 </tr>
                             </thead>
 
@@ -48,8 +49,8 @@ $photos = Photo::find_all();
                                 <?php foreach($photos as $photo) :  ?>
                                     <tr>
                                          <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
-                                            <div class="pictures-link">
-                                                <a href="">View</a>
+                                            <div class="action_links">
+                                                <a href="../photo.php?id=<?php echo $photo->id; ?>">View</a>
                                                 <a href="edit_photo.php?id=<?php echo $photo->id; ?>">Edit</a>
                                                 <a href="delete_photo.php?id=<?php echo $photo->id; ?>">Delete</a>
                                             </div>
@@ -58,6 +59,15 @@ $photos = Photo::find_all();
                                          <td><?php echo $photo->filename; ?></td>
                                          <td><?php echo $photo->title; ?></td>
                                          <td><?php echo $photo->size; ?></td>
+                                         <td>
+                                             <a href="photo_comment.php?id=<?php echo $photo->id; ?>">
+                                             <?php
+                                             $comments = Comment::find_comments($photo->id);
+                                             echo count($comments);
+                                             ?>
+                                             </a>
+                                         </td>
+
 
                                      </tr>
 
