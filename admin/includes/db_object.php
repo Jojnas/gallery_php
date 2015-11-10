@@ -28,7 +28,7 @@ class DB_object{
             return false;
 
         } else {
-            $this->image = basename($file['name']);
+            $this->filename = basename($file['name']);
             $this->tmp_path = $file['tmp_name'];
             $this->type = $file['type'];
             $this->size = $file['size'];
