@@ -46,7 +46,7 @@ $photos = Photo::find_all();
 
                             <tbody>
 
-                                <?php foreach($photos as $photo) :  ?>
+                                <?php foreach($photos as $photo):  ?>
                                     <tr>
                                          <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
                                             <div class="action_links">
@@ -71,7 +71,7 @@ $photos = Photo::find_all();
 
                                      </tr>
 
-                                <?php endforeach ?>
+                                <?php endforeach; ?>
 
                             </tbody>
                         </table>
