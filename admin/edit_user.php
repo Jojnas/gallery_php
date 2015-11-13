@@ -1,4 +1,5 @@
 <?php include("includes/header.php");
+include("includes/photo_library_modal.php");
 
 
 if(!$session->isSignedIn()){
@@ -39,6 +40,9 @@ if (isset($_POST['update'])) {
 
 ?>
 
+
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -61,7 +65,7 @@ if (isset($_POST['update'])) {
                         Users
                     </h1>
                     <div class="col-md-6">
-                        <img class="img-responsive" src="<?php echo $user->picture_pathu(); ?>" alt="">
+                        <a href="#" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="<?php echo $user->picture_pathu(); ?>" alt=""></a>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
