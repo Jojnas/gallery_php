@@ -57,6 +57,7 @@ class DB_object{
         return $found_user;
     }
 
+
     public static function find_this_query($sql){
         global $database;
 

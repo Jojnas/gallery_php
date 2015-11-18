@@ -11,6 +11,8 @@
 
     <script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 
+  <script src="js/dropzone.js"></script>
+
   <script src="js/script.js"></script>
 
   <script type="text/javascript">

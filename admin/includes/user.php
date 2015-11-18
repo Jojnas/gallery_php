@@ -29,6 +29,22 @@ class User extends DB_object {
 
     }
 
+    public function delete_photo(){
+
+        if($this->delete()){
+
+            $target_path = SITE_ROOT . DS . 'admin' . $this->picture_path();
+
+            if (unlink($target_path)){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+    }
 
     public function upload_photo(){
 
@@ -87,6 +103,25 @@ class User extends DB_object {
         } else {
             return false;
         }
+
+    }
+
+    public function ajax_save_user_image($image, $id)
+    {
+
+        global $database;
+
+        $image = $database->escape_string($image);
+        $id = $database->escape_string($id);
+
+        $this->image = $image;
+        $this->id = $id;
+
+        $sql = "UPDATE " . static::$db_table . " SET user_image = '{$this->image}'
+                WHERE id = " . $this->id;
+        $update_image = $database->query($sql);
+
+        echo $this->image_assign();
 
     }
 
